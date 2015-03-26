@@ -13,6 +13,9 @@ describe('chai-like', function() {
     object.should.like({
       name: 'test'
     });
+    object.should.not.like({
+      name: 'test1asdfafdsaf'
+    });
   });
 
   it('should deeply compare two JSON', function() {
@@ -31,6 +34,12 @@ describe('chai-like', function() {
         name: 'product'
       }
     });
+    object.should.not.like({
+      name: 'test',
+      product: {
+        name: 'product1'
+      }
+    });
   });
 
   it('should compare two array', function() {
@@ -47,6 +56,12 @@ describe('chai-like', function() {
       name: 'test',
       product: {
         name: 'product'
+      }
+    }]);
+    array.should.not.like([{
+      name: 'test',
+      product: {
+        name: 'product1'
       }
     }]);
   });
