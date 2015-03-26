@@ -22,9 +22,6 @@
     "url": "https://github.com/zation/chai-like/issues"
   },
   "homepage": "https://github.com/zation/chai-like",
-  "dependencies": {
-    "lodash": "^3.6.0"
-  },
   "devDependencies": {
     "chai": "^2.1.2",
     "mocha": "^2.2.1"
