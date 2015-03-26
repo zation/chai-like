@@ -27,6 +27,9 @@ var object = {
 object.should.like({
   name: 'test'
 });
+object.should.not.like({
+  name: 'test1'
+});
 ```
 
 Deeply compare.
@@ -47,6 +50,12 @@ object.should.like({
     name: 'product'
   }
 });
+object.should.not.like({
+  name: 'test',
+  product: {
+    name: 'product1'
+  }
+});
 ```
 
 Compare array.
@@ -65,6 +74,12 @@ array.should.like([{
   name: 'test',
   product: {
     name: 'product'
+  }
+}]);
+array.should.not.like([{
+  name: 'test',
+  product: {
+    name: 'product1'
   }
 }]);
 ```

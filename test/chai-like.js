@@ -14,7 +14,7 @@ describe('chai-like', function() {
       name: 'test'
     });
     object.should.not.like({
-      name: 'test1asdfafdsaf'
+      name: 'test1'
     });
   });
 
