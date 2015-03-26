@@ -1,0 +1,32 @@
+{
+  "name": "chai-like",
+  "version": "0.0.1",
+  "description": "A JSON matcher for chai",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/zation/chai-like.git"
+  },
+  "keywords": [
+    "chai",
+    "json",
+    "like",
+    "test"
+  ],
+  "author": "Zation",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zation/chai-like/issues"
+  },
+  "homepage": "https://github.com/zation/chai-like",
+  "dependencies": {
+    "lodash": "^3.6.0"
+  },
+  "devDependencies": {
+    "chai": "^2.1.2",
+    "mocha": "^2.2.1"
+  }
+}
