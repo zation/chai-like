@@ -32,4 +32,22 @@ describe('chai-like', function() {
       }
     });
   });
+
+  it('should compare two array', function() {
+    var array = [{
+      id: 1,
+      name: 'test',
+      product: {
+        id: 1,
+        name: 'product'
+      },
+      updatedAt: 'now'
+    }];
+    array.should.like([{
+      name: 'test',
+      product: {
+        name: 'product'
+      }
+    }]);
+  });
 });

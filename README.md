@@ -48,3 +48,23 @@ object.should.like({
   }
 });
 ```
+
+Compare array.
+
+```js
+var array = [{
+  id: 1,
+  name: 'test',
+  product: {
+    id: 1,
+    name: 'product'
+  },
+  updatedAt: 'now'
+}];
+array.should.like([{
+  name: 'test',
+  product: {
+    name: 'product'
+  }
+}]);
+```
