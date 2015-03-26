@@ -9,7 +9,7 @@ This is really useful when you are testing API and want to ignore some attribute
 Install with [npm](https://www.npmjs.com/package/co-wechat-parser)
 
 ```bash
-npm install --save co-wechat-parser
+npm install --save-dev chai-like
 ```
 
 ## Assertions
