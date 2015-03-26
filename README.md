@@ -1,6 +1,8 @@
 # chai-like
 
-A JSON matcher for chai
+A JSON matcher for chai.
+This is really useful when you are testing API and want to ignore some attributes like:
+ updatedAt, createdAt, id.
 
 ##  Install
 
