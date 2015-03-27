@@ -65,4 +65,28 @@ describe('chai-like', function() {
       }
     }]);
   });
+
+  it('should compare two JSON with an array sub node', function() {
+    var object = {
+      id: 1,
+      name: 'test',
+      products: [{
+        id: 1,
+        name: 'product'
+      }],
+      updatedAt: 'now'
+    };
+    object.should.like({
+      name: 'test',
+      products: [{
+        name: 'product'
+      }]
+    });
+    object.should.not.like({
+      name: 'test',
+      products: [{
+        name: 'product1'
+      }]
+    });
+  });
 });

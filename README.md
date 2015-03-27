@@ -83,3 +83,29 @@ array.should.not.like([{
   }
 }]);
 ```
+
+Compare JSON with an array sub node.
+
+```js
+var object = {
+  id: 1,
+  name: 'test',
+  products: [{
+    id: 1,
+    name: 'product'
+  }],
+  updatedAt: 'now'
+};
+object.should.like({
+  name: 'test',
+  products: [{
+    name: 'product'
+  }]
+});
+object.should.not.like({
+  name: 'test',
+  products: [{
+    name: 'product1'
+  }]
+});
+```
