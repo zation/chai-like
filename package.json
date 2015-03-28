@@ -27,5 +27,8 @@
   "devDependencies": {
     "chai": "^2.1.2",
     "mocha": "^2.2.1"
+  },
+  "dependencies": {
+    "ramda": "^0.13.0"
   }
 }
