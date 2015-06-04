@@ -6,7 +6,7 @@ This is really useful when you are testing API and want to ignore some attribute
 
 ##  Install
 
-Install with [npm](https://www.npmjs.com/package/co-wechat-parser)
+Install with [npm](https://www.npmjs.com/package/chai-like)
 
 ```bash
 npm install --save-dev chai-like
