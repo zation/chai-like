@@ -109,3 +109,38 @@ object.should.not.like({
   }]
 });
 ```
+
+## Plugins
+
+You can extend chai-like with plugins as below format:
+
+```js
+var chai = require('chai');
+var like = require('chai-like');
+
+var numberStringPlugin = {
+  match: function(object) {
+    return !isNaN(Number(object));
+  },
+  assert: function(object, expected) {
+    return object === Number(expected);
+  }
+};
+like.extend(numberStringPlugin);
+
+chai.use(like);
+```
+
+Then we can assert as below:
+
+```js
+  var object = {
+    number: 123
+  };
+  object.should.like({
+    number: '123'
+  });
+  object.should.not.like({
+    number: 'not a number'
+  });
+```
