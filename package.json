@@ -12,6 +12,9 @@
   },
   "keywords": [
     "chai",
+    "chai-plugin",
+    "browser",
+    "objects",
     "json",
     "like",
     "test",
