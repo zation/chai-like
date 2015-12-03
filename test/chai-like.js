@@ -42,6 +42,14 @@ describe('chai-like', function() {
     });
   });
 
+  it('should compare empty array with empty object', function() {
+    var array = [];
+    var object = {};
+
+    object.should.not.like(array);
+    array.should.not.like(object);
+  });
+
   it('should compare two array', function() {
     var array = [{
       id: 1,
