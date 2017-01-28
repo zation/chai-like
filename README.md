@@ -144,3 +144,39 @@ Then we can assert as below:
     number: 'not a number'
   });
 ```
+
+### Plugin for testing strings with RegExp
+
+If some strings require fuzzy matching we can do this with a plugin as follows: 
+
+```js
+var chai = require('chai');
+var like = require('chai-like');
+
+var regexPlugin = like.extend({
+  match: function(object, expected) {
+    return typeof object === 'string' && expected instanceof RegExp;
+  },
+  assert: function(object, expected) {
+    return expected.test(object);
+  }
+});
+
+like.extend(regexPlugin);
+
+chai.use(like);
+```
+
+Then we can assert as below:
+
+```js
+var object = {
+  text: 'the quick brown fox jumps over the lazy dog'
+};
+object.should.like({
+  text: /.* jumps over .*/
+});
+object.should.not.like({
+  text: /\d/
+});
+```
