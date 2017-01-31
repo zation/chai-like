@@ -26,4 +26,27 @@ describe('chai-like plugin', function() {
 
     like.clearPlugins();
   });
+
+  it('should test a string with expected RegExp', function () {
+      like.extend({
+          match: function(object, expected) {
+              return typeof object === 'string' && expected instanceof RegExp;
+          },
+          assert: function(object, expected) {
+              return expected.test(object);
+          }
+      });
+
+      var object = {
+          text: 'the quick brown fox jumps over the lazy dog'
+      };
+      object.should.like({
+          text: /.* jumps over .*/
+      });
+      object.should.not.like({
+          text: /\d/
+      });
+
+      like.clearPlugins();
+  });
 });
