@@ -1,6 +1,6 @@
 {
   "name": "chai-like",
-  "version": "0.2.12",
+  "version": "0.2.13",
   "description": "A JSON matcher for chai",
   "main": "index.js",
   "scripts": {
