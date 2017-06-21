@@ -4,6 +4,11 @@ chai.should();
 chai.use(like);
 
 describe('chai-like plugin', function() {
+  afterEach(function() {
+    like.clearPlugins();
+  });
+
+
   it('should compare number and number like string', function() {
     like.extend({
       match: function(object) {
@@ -23,8 +28,6 @@ describe('chai-like plugin', function() {
     object.should.not.like({
       number: 'not a number'
     });
-
-    like.clearPlugins();
   });
 
   it('should test a string with expected RegExp', function () {
@@ -46,7 +49,21 @@ describe('chai-like plugin', function() {
       object.should.not.like({
           text: /\d/
       });
-
-      like.clearPlugins();
   });
+
+  it('should run the matching plugin and only it', function () {
+    like.extend({
+      match: function() { return false; },
+      assert: function() { throw new Error('should not match'); }
+    });
+
+    like.extend({
+      match: function() { return true; },
+      assert: function() { return true; }
+    });
+
+    var object = {}
+    object.should.like('still match this');
+  });
+
 });
