@@ -1,0 +1,15 @@
+sudo: false
+
+language: node_js
+
+node_js:
+  - "4.0"
+  - "6.0"
+  - "8.0"
+
+after_success:
+  - npm run coverage
+
+cache:
+  directories:
+    - node_modules
