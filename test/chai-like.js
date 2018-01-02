@@ -50,6 +50,20 @@ describe('chai-like', function() {
     array.should.not.like(object);
   });
 
+  it('should treat arrays with different length as different', function() {
+    var array1 = [0, 1, 2];
+    var array2 = [0];
+
+    var object1 = { array: array1 };
+    var object2 = { array: array2 };
+
+    array1.should.not.like(array2);
+    array2.should.not.like(array1);
+
+    object1.should.not.like(object2);
+    object2.should.not.like(object1);
+  });
+
   it('should compare two array', function() {
     var array = [{
       id: 1,
