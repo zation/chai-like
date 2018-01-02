@@ -1,3 +1,8 @@
+[![Build status](https://img.shields.io/travis/zation/chai-like.svg?label=travis)](https://travis-ci.org/zation/chai-like)
+[![Coverage Status](https://img.shields.io/coveralls/github/zation/chai-like.svg)](https://coveralls.io/github/zation/chai-like)
+[![npm/chai-like version](https://img.shields.io/npm/v/chai-like.svg?label=npm/chai-like)](https://www.npmjs.com/package/chai-like)
+[![license](https://img.shields.io/badge/license-mit-blue.svg)](https://opensource.org/licenses/MIT)
+
 # chai-like
 
 A JSON matcher for chai.
