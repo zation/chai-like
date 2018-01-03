@@ -11,6 +11,9 @@
     "type": "git",
     "url": "git://github.com/zation/chai-like.git"
   },
+  "files": [
+    "lib"
+  ],
   "keywords": [
     "chai",
     "chai-plugin",
