@@ -110,6 +110,24 @@ describe('chai-like', function() {
     object2.should.not.like(object1);
   });
 
+  describe('should match recursive structures', function() {
+    it('within array', function() {
+      var array = [];
+      array.push(array);
+
+      array.should.like(array);
+      array.should.like([array]);
+    });
+
+    it('within hash', function() {
+      var object = {};
+      object.field = object;
+
+      object.should.like(object);
+      object.should.like({ field: object });
+    });
+  });
+
   it('should compare two array', function() {
     var array = [{
       id: 1,
