@@ -158,14 +158,14 @@ If some strings require fuzzy matching we can do this with a plugin as follows:
 var chai = require('chai');
 var like = require('chai-like');
 
-var regexPlugin = like.extend({
+var regexPlugin = {
   match: function(object, expected) {
     return typeof object === 'string' && expected instanceof RegExp;
   },
   assert: function(object, expected) {
     return expected.test(object);
   }
-});
+};
 
 like.extend(regexPlugin);
 
