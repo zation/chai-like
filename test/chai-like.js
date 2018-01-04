@@ -8,6 +8,80 @@ chai.use(like);
 const expect = chai.expect;
 
 describe('chai-like', function() {
+  describe('should match primitives', function() {
+    var string = 'Question about life, universe and everything';
+    var number = 42;
+    var TRUE = true;
+    var FALSE = false;
+    var array = [string, number];
+    var object = { question: string, answer: number };
+
+    function fn() {}
+
+    it('string', function() {
+      ('').should.like('');
+      string.should.like(string);
+      string.should.like('Question about life, universe and everything');
+    });
+
+    it('number', function() {
+      number.should.like(number);
+      number.should.like(42);
+
+      number.should.not.like(NaN);
+      NaN.should.not.like(number);
+
+      NaN.should.not.like(NaN);
+    });
+
+    it('boolean', function() {
+      TRUE.should.like(TRUE);
+      TRUE.should.like(true);
+
+      FALSE.should.like(FALSE);
+      FALSE.should.like(false);
+    });
+
+    it('array', function() {
+      ([]).should.like([]);
+      array.should.like(array);
+      array.should.like([string, number]);
+    });
+
+    it('object', function() {
+      ({}).should.like({});
+      object.should.like(object);
+      object.should.like({ question: string, answer: number });
+    });
+
+    it('function', function() {
+      fn.should.like(fn);
+    });
+  });
+
+  it('should match RegExps', function() {
+    var regexp = /[abc]/;
+
+    regexp.should.like(regexp);
+    regexp.should.like(RegExp('[abc]'));
+    RegExp('[abc]').should.like(regexp);
+    new RegExp('[abc]').should.like(regexp);
+  });
+
+  it('should match Dates', function() {
+    var date = new Date(2018, 0, 4, 22, 6, 15, 777);
+
+    date.should.like(date);
+    date.should.like(new Date(2018, 0, 4, 22, 6, 15, 777));
+    date.should.not.like(new Date(2019, 0, 4, 22, 6, 15, 777));
+    date.should.not.like(new Date(2018, 1, 4, 22, 6, 15, 777));
+    date.should.not.like(new Date(2018, 0, 5, 22, 6, 15, 777));
+    date.should.not.like(new Date(2018, 0, 4, 23, 6, 15, 777));
+    date.should.not.like(new Date(2018, 0, 4, 22, 7, 15, 777));
+    date.should.not.like(new Date(2018, 0, 4, 22, 6, 16, 777));
+    date.should.not.like(new Date(2018, 0, 4, 22, 6, 15, 778));
+  });
+
   it('should differentiate `null` and `undefined`', function() {
     expect(undefined).like(undefined);
     expect(undefined).not.like(null);
