@@ -57,6 +57,46 @@ describe('chai-like', function() {
     it('function', function() {
       fn.should.like(fn);
     });
+
+    describe('with their object wrappers', function() {
+      it('string', function() {
+        string.should.like(String(string));
+        string.should.like(new String(string));
+
+        String(string).should.like(string);
+        new String(string).should.like(string);
+      });
+
+      it('number', function() {
+        number.should.like(Number(number));
+        number.should.like(new Number(number));
+
+        Number(number).should.like(number);
+        new Number(number).should.like(number);
+      });
+
+      it('boolean', function() {
+        TRUE .should.like(Boolean(true));
+        FALSE.should.like(Boolean(false));
+        TRUE .should.like(new Boolean(true));
+        FALSE.should.like(new Boolean(false));
+
+        Boolean(true ).should.like(TRUE);
+        Boolean(false).should.like(FALSE);
+        new Boolean(true ).should.like(TRUE);
+        new Boolean(false).should.like(FALSE);
+      });
+
+      it('array', function() {
+        ([]).should.like(new Array());
+
+        array.should.like(Array(string, number));
+        array.should.like(new Array(string, number));
+
+        Array(string, number).should.like(array);
+        new Array(string, number).should.like(array);
+      });
+    });
   });
 
   it('should match RegExps', function() {
