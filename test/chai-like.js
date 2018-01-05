@@ -1,9 +1,11 @@
-var chai = require('chai');
-var like = require('../index');
+'use strict';
+
+const chai = require('chai');
+const like = require('../index');
 chai.should();
 chai.use(like);
 
-var expect = chai.expect;
+const expect = chai.expect;
 
 describe('chai-like', function() {
   it('should differentiate `null` and `undefined`', function() {
@@ -14,9 +16,9 @@ describe('chai-like', function() {
   });
 
   it('should not match absense of the property and the `undefined` or `null` value', function() {
-    var object1 = { property: undefined };
-    var object2 = { property: null };
-    var object3 = {};
+    const object1 = { property: undefined };
+    const object2 = { property: null };
+    const object3 = {};
 
     object1.should.like(object3);
     object2.should.like(object3);
@@ -29,29 +31,29 @@ describe('chai-like', function() {
   });
 
   it('should not match number and string', function() {
-    var number = 42;
-    var string = '42';
+    const number = 42;
+    const string = '42';
 
     number.should.not.like(string);
     string.should.not.like(number);
   });
 
   it('should match hashes with same keys in different order', function() {
-    var object1 = { key1: 1, key2: '2', key3: null };
-    var object2 = { key3: null, key2: '2', key1: 1 };
+    const object1 = { key1: 1, key2: '2', key3: null };
+    const object2 = { key3: null, key2: '2', key1: 1 };
 
     object1.should.like(object2);
   });
 
   it('should not match arrays with same values in different order', function() {
-    var array1 = [ 1, '2', null ];
-    var array2 = [ null, '2', 1 ];
+    const array1 = [ 1, '2', null ];
+    const array2 = [ null, '2', 1 ];
 
     array1.should.not.like(array2);
   });
 
   it('should compare two JSON and ignore some keys based on expectation', function() {
-    var object = {
+    const object = {
       id: 1,
       name: 'test',
       updatedAt: 'now'
@@ -65,7 +67,7 @@ describe('chai-like', function() {
   });
 
   it('should deeply compare two JSON', function() {
-    var object = {
+    const object = {
       id: 1,
       name: 'test',
       product: {
@@ -89,19 +91,19 @@ describe('chai-like', function() {
   });
 
   it('should compare empty array with empty object', function() {
-    var array = [];
-    var object = {};
+    const array = [];
+    const object = {};
 
     object.should.not.like(array);
     array.should.not.like(object);
   });
 
   it('should treat arrays with different length as different', function() {
-    var array1 = [0, 1, 2];
-    var array2 = [0];
+    const array1 = [0, 1, 2];
+    const array2 = [0];
 
-    var object1 = { array: array1 };
-    var object2 = { array: array2 };
+    const object1 = { array: array1 };
+    const object2 = { array: array2 };
 
     array1.should.not.like(array2);
     array2.should.not.like(array1);
@@ -129,7 +131,7 @@ describe('chai-like', function() {
   });
 
   it('should compare two array', function() {
-    var array = [{
+    const array = [{
       id: 1,
       name: 'test',
       product: {
@@ -153,7 +155,7 @@ describe('chai-like', function() {
   });
 
   it('should compare two JSON with an array sub node', function() {
-    var object = {
+    const object = {
       id: 1,
       name: 'test',
       products: [{

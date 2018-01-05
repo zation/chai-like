@@ -1,5 +1,7 @@
-var chai = require('chai');
-var like = require('../index');
+'use strict';
+
+const chai = require('chai');
+const like = require('../index');
 chai.should();
 chai.use(like);
 
@@ -19,7 +21,7 @@ describe('chai-like plugin', function() {
       }
     });
 
-    var object = {
+    const object = {
       number: 123
     };
     object.should.like({
@@ -40,7 +42,7 @@ describe('chai-like plugin', function() {
           }
       });
 
-      var object = {
+      const object = {
           text: 'the quick brown fox jumps over the lazy dog'
       };
       object.should.like({
@@ -62,7 +64,7 @@ describe('chai-like plugin', function() {
       assert: function() { return true; }
     });
 
-    var object = {}
+    const object = {}
     object.should.like('still match this');
   });
 
