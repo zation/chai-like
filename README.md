@@ -1,3 +1,7 @@
+@刘旸：
+
+   你好，我是成都支付宝国际业务前端团队的徐干，最近我们这边正好有 [前端开发工程师](https://www.v2ex.com/t/416346) 的职位空缺，不知道你有没有兴趣？
+
 [![Build status](https://img.shields.io/travis/zation/chai-like.svg?label=travis)](https://travis-ci.org/zation/chai-like)
 [![Coverage Status](https://img.shields.io/coveralls/github/zation/chai-like.svg)](https://coveralls.io/github/zation/chai-like)
 [![npm/chai-like version](https://img.shields.io/npm/v/chai-like.svg?label=npm/chai-like)](https://www.npmjs.com/package/chai-like)
