@@ -43,6 +43,6 @@
     ]
   },
   "peerDependencies": {
-    "chai": "2 - 4"
+    "chai": "2 - 5"
   }
 }
